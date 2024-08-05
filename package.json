@@ -1,14 +1,21 @@
 {
   "name": "devburger-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
   },
   "author": {
     "name": "Rodrigo Augusto Robl Ferreira",
     "url": "https://github.com/rodrigorobl"
-  }, 
+  },
   "license": "ISC",
-  "description": "DevBurger API."
+  "description": "DevBurger API.",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "sucrase": "^3.35.0"
+  }
 }
