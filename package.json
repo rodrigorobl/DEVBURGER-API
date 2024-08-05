@@ -1,0 +1,14 @@
+{
+  "name": "devburger-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Rodrigo Augusto Robl Ferreira",
+    "url": "https://github.com/rodrigorobl"
+  }, 
+  "license": "ISC",
+  "description": "DevBurger API."
+}
