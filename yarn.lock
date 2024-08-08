@@ -240,6 +240,11 @@ array-flatten@1.1.1:
   resolved "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
   integrity sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==
 
+async@0.2.9:
+  version "0.2.9"
+  resolved "https://registry.npmjs.org/async/-/async-0.2.9.tgz"
+  integrity sha512-OAtM6mexGteNKdU29wcUfRW+VuBr94A3hx9h9yzBnPaQAbKoW1ORd68XM4CCAOpdL5wlNFgO29hsY1TKv2vAKw==
+
 at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/at-least-node/-/at-least-node-1.0.0.tgz"
@@ -706,6 +711,13 @@ event-emitter@^0.3.5:
   dependencies:
     d "1"
     es5-ext "~0.10.14"
+
+express-load@^1.1.16:
+  version "1.1.16"
+  resolved "https://registry.npmjs.org/express-load/-/express-load-1.1.16.tgz"
+  integrity sha512-R+HNkLZMbUCJQ42VPx4sGbs/a0Xv//XUNRft2WqgBz7+6qL8QyTsqBdwPh3h33lxFFrwHKfF4Wn65sDg8POiHA==
+  dependencies:
+    async "0.2.9"
 
 express@^4.19.2:
   version "4.19.2"

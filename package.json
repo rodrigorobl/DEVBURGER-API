@@ -13,6 +13,7 @@
   "description": "DevBurger API.",
   "dependencies": {
     "express": "^4.19.2",
+    "express-load": "^1.1.16",
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.3",
