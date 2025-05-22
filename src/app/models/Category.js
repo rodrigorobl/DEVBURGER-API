@@ -9,7 +9,7 @@ class Category extends Model {
         url: {
           type: DataTypes.VIRTUAL,
           get() {
-            return `http://localhost:3001/category-file/${this.path}`;
+            return `https://devburger-api-jyne.vercel.app/category-file/${this.path}`;
           },
         },
       },
