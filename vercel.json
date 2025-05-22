@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "start.js",
+      "dest": "src/server.js",
       "headers": {
         "Access-Control-Allow-Origin": "https://devburger-interface-five.vercel.app",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
