@@ -14,6 +14,11 @@ const routes = new Router();
 
 const upload = multer(multerConfig);
 
+// Healthcheck endpoint para manter a aplicação ativa na Vercel
+routes.get('/healthcheck', (req, res) => {
+  return res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 routes.post('/users', UserControler.store);
 routes.post('/sessions', SessionController.store);
 
