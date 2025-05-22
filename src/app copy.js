@@ -9,24 +9,19 @@ class App {
   constructor() {
     this.app = express();
 
-    // ⚠️ CORS precisa vir primeiro
+    //this.app.use(cors());//
     this.app.use(cors({
       origin: 'https://devburger-interface-five.vercel.app',
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],
       credentials: true
     }));
-
-    // ⚠️ Adicionar resposta manual a OPTIONS
-    this.app.options('*', cors());
-
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
     this.app.use(express.json());
-
     this.app.use(
       '/product-file',
       express.static(resolve(__dirname, '..', 'uploads')),
