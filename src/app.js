@@ -3,13 +3,12 @@ const { resolve } = require('node:path');
 const cors = require('cors');
 
 const routes = require('./routes');
-require('./database');
+require('./database'); // se usa sequelize, mantém
 
 class App {
   constructor() {
     this.app = express();
 
-    // ⚠️ CORS precisa vir primeiro
     this.app.use(cors({
       origin: 'https://devburger-interface-five.vercel.app',
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -17,16 +16,12 @@ class App {
       credentials: true
     }));
 
-    // ⚠️ Adicionar resposta manual a OPTIONS
-    this.app.options('*', cors());
-
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
     this.app.use(express.json());
-
     this.app.use(
       '/product-file',
       express.static(resolve(__dirname, '..', 'uploads')),

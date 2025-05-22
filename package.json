@@ -4,9 +4,11 @@
   "main": "src/server.js",
   
   "scripts": {
-    "dev": "nodemon",
+    //"dev": "nodemon",//
+    "dev": "nodemon start.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "start": "node dist/server.js",
+    //"start": "node dist/server.js",//
+    "start": "node start.js",
     "vercel-build": "npm install pg pg-hstore --save"
   },
   "author": {
