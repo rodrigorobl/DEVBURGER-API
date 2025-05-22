@@ -11,7 +11,10 @@ class Product extends Model {
         url: {
           type: DataTypes.VIRTUAL,
           get() {
-            return `http://localhost:3001/product-file/${this.path}`;
+            const baseUrl = process.env.NODE_ENV === 'production' 
+              ? process.env.VERCEL_URL || 'https://devburger-api-three.vercel.app' 
+              : 'http://localhost:3001';
+            return `${baseUrl}/product-file/${this.path}`;
           },
         },
       },

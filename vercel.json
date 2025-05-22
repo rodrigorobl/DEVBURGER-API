@@ -5,12 +5,24 @@
       "src": "src/server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["**/*"],
+        "includeFiles": ["**/*", "uploads/**"],
         "installCommand": "npm install && npm install pg pg-hstore"
       }
+    },
+    {
+      "src": "uploads/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/product-file/(.*)",
+      "dest": "/uploads/$1"
+    },
+    {
+      "src": "/category-file/(.*)",
+      "dest": "/uploads/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "src/server.js"
