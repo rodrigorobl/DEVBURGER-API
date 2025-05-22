@@ -25,17 +25,9 @@ class Database {
   }
 
   mongo() {
-    // String de conexão com # codificado como %23
-    const mongoURI = 'mongodb+srv://rodrigoaugustor21:5xQ3k3BAD%23pKBCe@cluster0.by5ulwn.mongodb.net/devburger';
-    
-    this.mongoConnection = mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }).then(() => {
-      console.log('Conexão com MongoDB Atlas estabelecida com sucesso');
-    }).catch((error) => {
-      console.error('Erro na conexão com MongoDB Atlas:', error.message);
-    });
+    this.mongoConnection = mongoose.connect(
+      'mongodb://localhost:27017/devburger',
+    );
   }
 }
 
