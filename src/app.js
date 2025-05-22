@@ -9,7 +9,13 @@ class App {
   constructor() {
     this.app = express();
 
-    this.app.use(cors());
+    //this.app.use(cors());//
+    this.app.use(cors({
+      origin: 'https://devburger-interface-five.vercel.app',
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true
+    }));
     this.middlewares();
     this.routes();
   }
