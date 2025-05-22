@@ -1,11 +1,11 @@
-import Sequelize from 'sequelize';
-import mongoose from 'mongoose';
+const Sequelize = require('sequelize');
+const mongoose = require('mongoose');
 
-import configDatabase from '../config/database';
+const configDatabase = require('../config/database');
 
-import User from '../app/models/User';
-import Product from '../app/models/Products';
-import Category from '../app/models/Category';
+const User = require('../app/models/User');
+const Product = require('../app/models/Products');
+const Category = require('../app/models/Category');
 
 const models = [User, Product, Category];
 
@@ -39,4 +39,4 @@ class Database {
   }
 }
 
-export default new Database();
+module.exports = new Database();

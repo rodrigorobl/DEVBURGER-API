@@ -1,7 +1,7 @@
-import { v4 } from "uuid";
-import * as Yup from "yup";
+const { v4 } = require("uuid");
+const Yup = require("yup");
 
-import User from "../models/User";
+const User = require("../models/User");
 
 class UserControler {
 	async store(request, response) {
@@ -47,4 +47,4 @@ class UserControler {
 	}
 }
 
-export default new UserControler();
+module.exports = new UserControler();

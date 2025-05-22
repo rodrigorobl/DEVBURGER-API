@@ -1,6 +1,6 @@
-import Stripe from 'stripe';
-import * as Yup from 'yup';
-import 'dotenv/config';
+const Stripe = require('stripe');
+const Yup = require('yup');
+require('dotenv/config');
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -51,4 +51,4 @@ class CreatePaymentIntentController {
   }
 }
 
-export default new CreatePaymentIntentController();
+module.exports = new CreatePaymentIntentController();

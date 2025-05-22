@@ -1,14 +1,14 @@
-import { Router } from 'express';
-import multer from 'multer';
-import multerConfig from './config/multer';
-import authMiddleware from './app/middlewares/auth';
+const { Router } = require('express');
+const multer = require('multer');
+const multerConfig = require('./config/multer');
+const authMiddleware = require('./app/middlewares/auth');
 
-import UserControler from './app/controllers/UserController';
-import SessionController from './app/controllers/SessionController';
-import ProductController from './app/controllers/ProductController';
-import CategoryController from './app/controllers/CategoryController';
-import OrderController from './app/controllers/OrderController';
-import CreatePaymentIntentController from './app/controllers/stripe/CreatePaymentIntentController';
+const UserControler = require('./app/controllers/UserController');
+const SessionController = require('./app/controllers/SessionController');
+const ProductController = require('./app/controllers/ProductController');
+const CategoryController = require('./app/controllers/CategoryController');
+const OrderController = require('./app/controllers/OrderController');
+const CreatePaymentIntentController = require('./app/controllers/stripe/CreatePaymentIntentController');
 
 const routes = new Router();
 
@@ -37,4 +37,4 @@ routes.put('/orders/:id', OrderController.update);
 
 routes.post('/create-payment-intent', CreatePaymentIntentController.store);
 
-export default routes;
+module.exports = routes;

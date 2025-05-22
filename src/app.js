@@ -1,9 +1,9 @@
-import express from 'express';
-import { resolve } from 'node:path';
-import cors from 'cors';
+const express = require('express');
+const { resolve } = require('node:path');
+const cors = require('cors');
 
-import routes from './routes';
-import './database';
+const routes = require('./routes');
+require('./database');
 
 class App {
   constructor() {
@@ -32,4 +32,4 @@ class App {
   }
 }
 
-export default new App().app;
+module.exports = new App().app;
