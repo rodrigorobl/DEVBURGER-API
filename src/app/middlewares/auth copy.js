@@ -8,18 +8,21 @@ function authMiddleware(request, response, next) {
     return response.status(401).json({ error: 'Token not provided' });
   }
 
-  const token = authToken.split(' ')[1]; // pegar só o token sem o 'Bearer'
+  const token = authToken.split(' ').at(1);
 
   try {
-    const decoded = jwt.verify(token, authConfig.secret);
-    request.userId = decoded.id;
-    request.userName = decoded.name;
+    jwt.verify(token, authConfig.secret, (err, decoded) => {
+      if (err) {
+        throw new Error();
+      }
 
-    return next();
+      request.userId = decoded.id;
+      request.userName = decoded.name;
+    });
   } catch (err) {
-    console.error('Erro no token JWT:', err);
     return response.status(401).json({ error: 'Token is invalid' });
   }
+  return next();
 }
 
 module.exports = authMiddleware;
