@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon",
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "vercel-build": "npm install pg pg-hstore --save"
   },
   "author": {
     "name": "Rodrigo Augusto Robl Ferreira",
